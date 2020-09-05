@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Source {
+    public static boolean checkPrime(int num){
+        int count=1;
+        for(int i=2;i<=num/2;i++) {
+            if(num%i==0) {
+                count++;
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+        int num1= s.nextInt();
+        int num2= s.nextInt();
+        int sum=0;
+        boolean flag=false;
+        
+        if (num1<3 || num1>1000 || num2<3 || num2>1000 || num1>num2) {
+            System.out.println("INVALID_INPUT");
+        }
+        else {
+            for(int i=num1; i<=num2; i++) {
+                flag = checkPrime(i);
+                if(flag) {sum+=i;}
+            }
+            System.out.println(sum);
+        }
+   }
+}

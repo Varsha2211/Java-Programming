@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Source {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int num= s.nextInt();
+        
+        if(num<100 || num>999) { System.out.println("INVALID_INPUT"); }
+        else  {
+        int a=num;
+        int rem,sum=0;
+        while (a!=0) {
+            rem=a%10;
+            sum+=rem*rem*rem;
+            a= a/10;
+        }
+        if (sum==num) { System.out.println("ARMSTRONG"); }
+        
+        else { System.out.println("NOT ARMSTRONG"); }
+        }
+    }
+}
